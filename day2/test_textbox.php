@@ -1,0 +1,1 @@
+<INPUT TYPE="text" NAME="txtname" value="<?php echo "abc"; ?>">

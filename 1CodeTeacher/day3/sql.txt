@@ -1,0 +1,25 @@
+1.
+insert into member (name,surname,sex,age,address,salary) 
+
+   values ("มานะ","ตั้งใจเรียน","M","18","กรุงเทพ","20000")
+
+2.select name,surname
+from member
+where address="กรุงเทพ"
+
+3.select * from member where address="กรุงเทพ" and salary > "20000"
+
+4.select * from member where name ="นก" or name="ไก่"
+
+5.select * from member where sex = "F" and address="กรุงเทพ" and salary >2000
+
+6.update member set address = "ชลบุรี"   where adddress= "กรุงเทพ"
+
+7.update member set salary = salary+1000 where address="กรุงเทพ"
+
+8.delete from member where salary < 20000
+
+9.delete from member where address != "กรุงเทพ"
+
+10.SELECT * FROM member 
+   WHERE salary = ( SELECT max( salary )  FROM member )

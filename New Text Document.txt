@@ -1,0 +1,18 @@
+1.  INSERT INTO `dbtrain`.`member` (`mem_id`, `mem_name`, `mem_sname`, `mem_sex`, `mem_age`, `mem_add`, `mem_salary`) VALUES (NULL, 'ปิติ', 'รักเรียน', 'M', '26', 'เชียงราย', '24000');
+2.  SELECT `mem_name`,`mem_sname` FROM `member` WHERE `mem_add`= 'กรุงเทพ'
+3.  SELECT * FROM `member` WHERE `mem_add`= 'กรุงเทพ' and `mem_salary` > '20000'
+4.  SELECT * FROM `member` WHERE `mem_name`= 'นก' or `mem_name` = 'ไก่'
+5.  SELECT `mem_name` FROM `member` WHERE `mem_sex`= 'F' and `mem_age` > '25' and `mem_salary` > '20000'
+6.  UPDATE `member` SET `mem_add`= 'ชลบุรี' WHERE `mem_add`= 'กรุงเทพ'
+7.  UPDATE `member` SET `mem_salary`= mem_salary+1000 WHERE `mem_add`= 'กรุงเทพ'
+8.  DELETE FROM `member` WHERE `mem_salary`< '20000'
+9.  DELETE FROM `member` WHERE `mem_add` != 'กรุงเทพ'
+10.  SELECT max(`mem_salary`) FROM `member` WHERE 1
+       SELECT min(`mem_salary`) FROM `member` WHERE 1
+       SELECT * FROM `member` WHERE `mem_salary`=(SELECT max(`mem_salary`) FROM `member`)
+	SELECT * FROM `member`, department WHERE 1
+การ join ตารางเข้าด้วยกัน
+SELECT t1.`mem_id`,t1.`mem_name`,t1.`mem_sname`,t1.`mem_sex`,t1.`mem_age`,t1.`mem_add`,t1.`mem_salary`,t1.`mem_dept`,t2.dep_id,t2.dep_name,t2.header FROM member t1, department t2 WHERE t1.mem_dept=t2.dep_id
+ดูหลัง From member t1, department t2   หมายเหตุ เลือกข้อมูลจากตาราง  member และให้ชื่อเล่นมันชื่อ t1
+ดูการเลือก ฟิล ออกมาแสดง
+t1.`mem_dept`,t2.dep_id  หมายเหตุ เลือก ตาราง member โดยเอาข้อมูล ฟิล Mem_dept ออกมาแสดง แล้วก็เลือกข้อมูล Dep_id จาก 9kik' deparment ออกมาแสดง
